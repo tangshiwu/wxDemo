@@ -9,7 +9,7 @@ Page({
         name: "古董局中局",
         id: 1,
         race: '8.9',
-        poster: 'http://p4.music.126.net/m8BMzRWR53lMu2uaMYV2mA==/109951166609630672.jpg',
+        poster: '/images/poster.png',
         director: ['郭子健'],
         actor: ['雷佳音', '李现', '辛芷蕾', '葛优']
       },
@@ -17,7 +17,7 @@ Page({
         name: "古董局中局1",
         id: 2,
         race: '8.9',
-        poster: 'http://p4.music.126.net/m8BMzRWR53lMu2uaMYV2mA==/109951166609630672.jpg',
+        poster: '/images/poster.png',
         director: ['郭子健'],
         actor: ['雷佳音', '李现', '辛芷蕾', '葛优']
       },
@@ -25,7 +25,7 @@ Page({
         name: "古董局中局2",
         id: 3,
         race: '8.9',
-        poster: 'http://p4.music.126.net/m8BMzRWR53lMu2uaMYV2mA==/109951166609630672.jpg',
+        poster: '/images/poster.png',
         director: ['郭子健'],
         actor: ['雷佳音', '李现', '辛芷蕾', '葛优']
       }
