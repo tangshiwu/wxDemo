@@ -21,6 +21,21 @@
     <text class="user-motto">{{motto}}</text>
   </view> -->
   <view wx:for="{{movieList}}" wx:key="id" wx:for-item="item" class="item-detail">
-    <image style="width: 160rpx; height: 160rpx; " mode="aspectFill" src="{{item.poster}}"></image>
+    <view style="display: inline-block;">
+      <image style="width: 160rpx; height: 160rpx; " mode="aspectFill" src="{{item.poster}}"></image>
+    </view>
+    <view class="item-info">
+      <view class="itemName">{{item.name}}</view>
+      <view>淘票票评分<text>{{item.race}}</text></view>
+      <view>导演：
+        <text wx:for="{{item.director}}" wx:for-item="every">{{every}}</text>
+      </view>
+      <view>主演：
+        <text wx:for="{{item.actor}}" wx:for-item="every">{{every}}</text>
+      </view>
+    </view>
+    <view class="buy-btn">
+      
+    </view>
   </view>
 </view>

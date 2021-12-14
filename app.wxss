@@ -7,6 +7,3 @@
   justify-content: flex-start;
   box-sizing: border-box;
 }
-.item-detail{
-  height: 200rpx;
-}
