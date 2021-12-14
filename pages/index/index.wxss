@@ -1,0 +1,15 @@
+/**index.wxss**/
+.item-detail {
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+}
+.item-info {
+  display: inline-block;
+  vertical-align: top;
+  height: 100%;
+  flex: 1;
+}
+.buy-btn {
+  width: 50px;
+}

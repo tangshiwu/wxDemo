@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <view class="userinfo">
+    <block wx:if="{{canIUseOpenData}}">
+      <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName"></open-data>
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view> -->
+  <view wx:for="{{movieList}}" wx:key="id" wx:for-item="item" class="item-detail">
+    <view style="display: inline-block;">
+      <image style="width: 160rpx; height: 160rpx; " mode="aspectFill" src="{{item.poster}}"></image>
+    </view>
+    <view class="item-info">
+      <view class="itemName">{{item.name}}</view>
+      <view>淘票票评分<text>{{item.race}}</text></view>
+      <view>导演：
+        <text wx:for="{{item.director}}" wx:for-item="every">{{every}}</text>
+      </view>
+      <view>主演：
+        <text wx:for="{{item.actor}}" wx:for-item="every">{{every}}</text>
+      </view>
+    </view>
+    <view class="buy-btn">
+      
+    </view>
+  </view>
+</view>
