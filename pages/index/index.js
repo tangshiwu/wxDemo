@@ -11,30 +11,56 @@ Page({
         race: '8.9',
         poster: '/images/poster.png',
         director: ['郭子健'],
-        actor: ['雷佳音', '李现', '辛芷蕾', '葛优']
+        actor: ['雷佳音', '李现', '辛芷蕾', '葛优'],
+        releaseTime: '2021-12-01'
       },
       {
-        name: "古董局中局1",
+        name: "扬名立万",
         id: 2,
-        race: '8.9',
+        race: '9.0',
         poster: '/images/poster.png',
-        director: ['郭子健'],
-        actor: ['雷佳音', '李现', '辛芷蕾', '葛优']
+        director: ['刘循子墨'],
+        actor: ['尹正', '邓家佳', '喻恩泰'],
+        releaseTime: '2021-12-01'
       },
       {
-        name: "古董局中局2",
+        name: "误杀2",
         id: 3,
-        race: '8.9',
+        race: '',
         poster: '/images/poster.png',
-        director: ['郭子健'],
-        actor: ['雷佳音', '李现', '辛芷蕾', '葛优']
+        director: ['戴墨'],
+        actor: ['肖央', '任达华', '文咏珊'],
+        releaseTime: ''
+      },
+      {
+        name: "误杀2",
+        id: 4,
+        race: '',
+        poster: '/images/poster.png',
+        director: ['戴墨'],
+        actor: ['肖央', '任达华', '文咏珊'],
+        releaseTime: ''
+      },
+      {
+        name: "误杀2",
+        id: 5,
+        race: '',
+        poster: '/images/poster.png',
+        director: ['戴墨'],
+        actor: ['肖央', '任达华', '文咏珊'],
+        releaseTime: ''
       }
     ],
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    canIUseGetUserProfile: false,
-    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
+    region: ['北京市', '北京市', '石景山区'],
+    customItem: '',
+    background: ['/images/banner1.jpg', '/images/banner2.jpg', '/images/banner3.jpg'],
+    indicatorDots: true,
+    vertical: false,
+    autoplay: false,
+    interval: 2000,
+    duration: 500,
+    navbar: ['正在热映', '即将上映'],
+    currentNav: 0
   },
   // 事件处理函数
   bindViewTap() {
@@ -49,25 +75,9 @@ Page({
       })
     }
   },
-  getUserProfile(e) {
-    // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
-    wx.getUserProfile({
-      desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-      success: (res) => {
-        console.log(res)
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    })
-  },
-  getUserInfo(e) {
-    // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
-    console.log(e)
+  navbarTap(e) {
     this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+      currentNav: e.currentTarget.dataset.index
     })
   }
 })

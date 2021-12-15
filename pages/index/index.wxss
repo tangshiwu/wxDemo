@@ -1,4 +1,43 @@
 /**index.wxss**/
+page {
+  height: 100%;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.nav-contain{
+  width: 100%;
+  height: 25px;
+  padding-left: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.main-contain {
+  width: 100%;
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
+.main-content {
+  height: 100%;
+  overflow-y: auto;
+}
+.picker {
+  font-size: 14px;
+}
+.right-nav {
+  font-size: 13px;
+  width: 150px;
+  display: flex;
+  justify-content: space-around;
+}
+.checkedNav {
+  color: #ed5e4c;
+  border-bottom: solid 2px #ed5e4c;
+}
 .item-detail:nth-child(1) {
   border-top: solid 1px #c7c6c6;
 }
@@ -8,6 +47,7 @@
   display: flex;
   padding: 10px 5px;
   border-bottom: solid 1px #c7c6c6;
+  box-sizing: border-box;
 }
 .item-info {
   display: inline-block;
@@ -22,10 +62,22 @@
   font-weight: bold;
 }
 .info-detail {
-  font-size: 13px;
+  font-size: 12px;
   line-height: 20px;
   color: #5a5a5a;
 }
+.info-detail text {
+  padding-right: 5px;
+}
 .buy-btn {
-  width: 50px;
+  width: 55px;
+  line-height: 50px;
+  position: relative;
+}
+.mini-btn {
+  border-radius: 12px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
