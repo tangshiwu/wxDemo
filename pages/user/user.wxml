@@ -1,8 +1,8 @@
 <!--pages/user/user.wxml-->
 <view class="container">
   <view class="user-photo" bindtap="login">
-    <image src="/images/defaultImg.png" class="default-img"></image>
-    <text class="user-name">立即登录</text>
+    <image src="{{avatarUrl == null ? '/images/defaultImg.png' : avatarUrl}}" class="default-img"></image>
+    <text class="user-name">{{nickName == null ? '立即登录' : nickName}}</text>
   </view>
   <view class="user-content">
     <view wx:for="{{userContenr}}" class="list-item" wx:key="index">{{item.name}}</view>
