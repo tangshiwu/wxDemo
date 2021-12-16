@@ -1,12 +1,9 @@
 /**index.wxss**/
-page {
-  height: 100%;
-}
+@import "../../iconfont.wxss";
 .container {
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 .nav-contain{
   width: 100%;
@@ -21,12 +18,13 @@ page {
   height: 100%;
   overflow: hidden;
 }
-.main-content {
-  height: 100%;
-  overflow-y: auto;
-}
 .picker {
   font-size: 14px;
+}
+
+.down-icon {
+  padding-left: 2px;
+  font-size: 13px;
 }
 .right-nav {
   font-size: 13px;

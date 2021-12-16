@@ -53,7 +53,7 @@ Page({
     ],
     region: ['北京市', '北京市', '石景山区'],
     customItem: '',
-    background: ['/images/banner1.jpg', '/images/banner2.jpg', '/images/banner3.jpg'],
+    background: ['http://149.129.123.124:4869/557836b4d45d9e042a9ed2d2166decfb', 'http://149.129.123.124:4869/b743aa2bc1473ee8a5484f6f982d9e0a', 'http://149.129.123.124:4869/9b6f685f79dc71ab8b8b4246b46e3f34'],
     indicatorDots: true,
     vertical: false,
     autoplay: false,

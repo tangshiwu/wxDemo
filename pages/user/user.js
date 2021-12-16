@@ -5,62 +5,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userContenr:[
+      {type: 'tickets', name: '电影票'},
+      {type: 'coupons', name: '优惠券'},
+      {type: 'equityCards', name: '权益卡'},
+      {type: 'snack', name: '我的小食'},
+      {type: 'wantToSee', name: '想看的电影'},
+      {type: 'seen', name: '看过的电影'},
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  login() {
+    wx.login({
+      success: function(res) {
+        console.log(res);
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
 
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

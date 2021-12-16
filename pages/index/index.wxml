@@ -4,7 +4,7 @@
     <view class="section">
       <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
         <view class="picker">
-          {{region[0]}}
+          <text class="iconfont icon-ditu-dibiao"></text>{{region[0]}}<text class="down-icon iconfont icon-xiajiantou"></text>
         </view>
       </picker>
     </view>
@@ -12,49 +12,47 @@
       <view wx:for="{{navbar}}" wx:key="index" class="{{currentNav==index ? 'checkedNav' : ''}}" data-index="{{index}}" bindtap="navbarTap">{{item}}</view>
     </view>
   </view>
-  <view class="main-contain">
-    <view class="main-content">
-      <view hidden="{{currentNav!==0}}">
-        <view class="page-section page-section-spacing swiper">
-          <swiper indicator-dots="{{indicatorDots}}"
-            autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
-            <block wx:for="{{background}}" wx:key="index">
-              <swiper-item>
-                <navigator url="/pages/cinema/cinema" open-type="switchTab">
-                  <image mode="aspectFill" style="width: 100%;" src="{{item}}"></image>
-                </navigator>
-              </swiper-item>
-            </block>
-          </swiper>
+  <scroll-view class="main-contain" scroll-y="true" hidden="{{currentNav!==0}}">
+    <view class="page-section page-section-spacing swiper">
+      <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+        <block wx:for="{{background}}" wx:key="index">
+          <swiper-item>
+            <navigator url="/pages/cinema/cinema" open-type="switchTab">
+              <image mode="aspectFill" style="width: 100%;" src="{{item}}"></image>
+            </navigator>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view>
+      <view wx:for="{{movieList}}" wx:key="id" wx:for-item="item" class="item-detail">
+        <view style="display: inline-block;">
+          <image style="width: 60px; height: 85px; border-radius: 5px;" mode="aspectFill" src="{{item.poster}}"></image>
         </view>
-        <view>
-          <view wx:for="{{movieList}}" wx:key="id" wx:for-item="item" class="item-detail">
-            <view style="display: inline-block;">
-              <image style="width: 60px; height: 85px; border-radius: 5px;" mode="aspectFill" src="{{item.poster}}"></image>
-            </view>
-            <view class="item-info">
-              <view class="itemName">{{item.name}}</view>
-              <view class="info-detail">
-                <text wx:if="{{item.race}}">淘票票评分{{item.race}}</text>
-                <text wx:else>暂无评分</text>
-              </view>
-              <view class="info-detail">导演：
-                <text wx:for="{{item.director}}" wx:key="index" wx:for-item="every">{{every}}</text>
-              </view>
-              <view class="info-detail">主演：
-                <text wx:for="{{item.actor}}" wx:key="index" wx:for-item="every">{{every + item.director.length}}</text>
-              </view>
-            </view>
-            <view class="buy-btn">
-              <button wx:if="{{item.releaseTime}}" size="mini" style="font-size: 13px;background-color: #ed5e4c;" class="mini-btn">购票</button>
-              <button wx:else size="mini" style="font-size: 13px;background-color: #42bdee;" class="mini-btn">预售</button>
-            </view>
+        <view class="item-info">
+          <view class="itemName">{{item.name}}</view>
+          <view class="info-detail">
+            <text wx:if="{{item.race}}">淘票票评分{{item.race}}</text>
+            <text wx:else>暂无评分</text>
+          </view>
+          <view class="info-detail">导演：
+            <text wx:for="{{item.director}}" wx:key="index" wx:for-item="every">{{every}}</text>
+          </view>
+          <view class="info-detail">主演：
+            <text wx:for="{{item.actor}}" wx:key="index" wx:for-item="every">{{every}}</text>
           </view>
         </view>
+        <view class="buy-btn">
+          <button wx:if="{{item.releaseTime}}" size="mini" style="font-size: 13px;background-color: #ed5e4c;" class="mini-btn">购票</button>
+          <button wx:else size="mini" style="font-size: 13px;background-color: #42bdee;" class="mini-btn">预售</button>
+        </view>
       </view>
-      <view hidden="{{currentNav!==1}}">
-        <view>即将上映</view>
-      </view>
+    </view>
+  </scroll-view>
+  <view hidden="{{currentNav!==1}}">
+    <view>即将上映
+      
     </view>
   </view>
 </view>

@@ -1,2 +1,11 @@
 <!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<view class="container">
+  <view class="user-photo" bindtap="login">
+    <image src="/images/defaultImg.png" class="default-img"></image>
+    <text class="user-name">立即登录</text>
+  </view>
+  <view class="user-content">
+    <view wx:for="{{userContenr}}" class="list-item" wx:key="index">{{item.name}}</view>
+  </view>
+  <text class="ver-text">version: 1.1.1</text>
+</view>
